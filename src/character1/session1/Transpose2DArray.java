@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 //1.1.13
 public class Transpose2DArray {
-    public static int[][] transpose2DArray(int[][] array) {
+    private static int[][] transpose2DArray(int[][] array) {
         int temp;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
@@ -20,17 +20,17 @@ public class Transpose2DArray {
     }
 
     private static void showMatrix(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-//            for (int j = 0; j < array[i].length; j++) {
-//
-//            }
-            System.out.println(Arrays.toString(array[i]));
+        for (int[] itemArray :
+                array) {
+            System.out.println(Arrays.toString(itemArray));
         }
 
     }
+
     public static void main(String args[]) {
-        int[][] test2DArray = {{1,2,3}, {4,5,6}, {7,8,9}};
+        int[][] test2DArray = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         showMatrix(test2DArray);
+        System.out.println("---------");
         showMatrix(transpose2DArray(test2DArray));
     }
 }
